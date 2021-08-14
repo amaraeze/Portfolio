@@ -18,7 +18,7 @@
   $contact = new PHP_Email_Form;
   $contact->ajax = true;**/
 
-  if if(mail($to, $subject, $add_message, $headers)){ 
+  if(mail($to, $subject, $add_message, $headers)){ 
     echo 'Email has sent successfully.'; 
  }else{ 
     echo 'Email sending failed.'; 
