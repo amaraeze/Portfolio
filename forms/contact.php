@@ -18,16 +18,18 @@
   $contact = new PHP_Email_Form;
   $contact->ajax = true;**/
 
-  if(mail($to, $subject, $add_message, $headers)){ 
-    echo 'Email has sent successfully.'; 
- }else{ 
-    echo 'Email sending failed.'; 
- }
+  
   $headers = 'From: '.$from_name.'<'.$from_email.'>'; 
   $to = $receiving_email_address;
   $from_name = $_POST['name'];
   $from_email = $_POST['email'];
   $subject = $_POST['subject'];
+  $message= $_POST['message'];
+  if(mail($to, $subject, $message)){ 
+    echo 'Email has sent successfully.'; 
+ }else{ 
+    echo 'Email sending failed.'; 
+ }
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
@@ -39,9 +41,9 @@
   );
   */
 
-  $add_message( $_POST['name'], 'From');
-  $add_message( $_POST['email'], 'Email');
-  $add_message( $_POST['message'], 'Message', 10);
+  // $add_message( $_POST['name'], 'From');
+  // $add_message( $_POST['email'], 'Email');
+  // $add_message( $_POST['message'], 'Message', 10);
 
-  echo $send();
+  // echo $send();
 ?>
