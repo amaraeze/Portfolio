@@ -506,7 +506,7 @@ section {
 }
 
 .portfolio #portfolio-flters {
-  padding: 0;
+  padding: 50;
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
