@@ -838,6 +838,8 @@ section {
   font-weight: 600;
   margin-bottom: 5px;
   color: #050d18;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact .info p {
@@ -845,6 +847,8 @@ section {
   margin-bottom: 20px;
   font-size: 14px;
   color: #173b6c;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact .info .email p {
