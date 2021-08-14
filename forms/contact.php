@@ -19,7 +19,7 @@
   $contact->ajax = true;**/
 
   
-  $headers = 'From: '.$from_name.'<'.$from_email.'>'; 
+  //headers = 'From: '.$from_name.'<'.$from_email.'>'; 
   $to = $receiving_email_address;
   $from_name = $_POST['name'];
   $from_email = $_POST['email'];
