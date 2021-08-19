@@ -1,15 +1,15 @@
 <?php
-require '../vendor/autoload.php';
-use Mailgun\Mailgun;
+#require '../vendor/autoload.php';
+#use Mailgun\Mailgun;
 # Instantiate the client.
-$mgClient = Mailgun::create('9df8b55593def345e7fec504bdd7ddda-6140bac2-47f8e1af', 'https//amaraeze.herokuapp.com');
+/**$mgClient = Mailgun::create('9df8b55593def345e7fec504bdd7ddda-6140bac2-47f8e1af', 'https//amaraeze.herokuapp.com');
 $domain = "sandbox7a0b75bcb65947ac958ee119c0a7ae5a.mailgun.org";
 $params = array(
   'from'	=> 'Excited User <mailgun@sandbox7a0b75bcb65947ac958ee119c0a7ae5a.mailgun.org>',
 	'to'	=> 'obiakotobe@gmail.com',
 	'subject' => 'Hello',
 	'text'	=> 'Testing some Mailgun awesomness!'
-    );
+    );**/
 
 # Make the call to the client.
 $result = $mgClient->messages()->send($domain, $params);
