@@ -1,18 +1,4 @@
 <?php
-#require '../vendor/autoload.php';
-#use Mailgun\Mailgun;
-# Instantiate the client.
-/**$mgClient = Mailgun::create('9df8b55593def345e7fec504bdd7ddda-6140bac2-47f8e1af', 'https//amaraeze.herokuapp.com');
-$domain = "sandbox7a0b75bcb65947ac958ee119c0a7ae5a.mailgun.org";
-$params = array(
-  'from'	=> 'Excited User <mailgun@sandbox7a0b75bcb65947ac958ee119c0a7ae5a.mailgun.org>',
-	'to'	=> 'obiakotobe@gmail.com',
-	'subject' => 'Hello',
-	'text'	=> 'Testing some Mailgun awesomness!'
-    );**/
-
-# Make the call to the client.
-$result = $mgClient->messages()->send($domain, $params);
   /**
   * Requires the "PHP Email Form" library
   * The "PHP Email Form" library is available only in the pro version of the template
@@ -21,29 +7,21 @@ $result = $mgClient->messages()->send($domain, $params);
   */
 
   // Replace contact@example.com with your real receiving email address
-  // $receiving_email_address = 'sandraamaraeze@gmail.com';
+  $receiving_email_address = 'contact@example.com';
 
-  /**if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
+  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
     include( $php_email_form );
   } else {
     die( 'Unable to load the "PHP Email Form" Library!');
   }
 
   $contact = new PHP_Email_Form;
-  $contact->ajax = true;**/
-
+  $contact->ajax = true;
   
-  //headers = 'From: '.$from_name.'<'.$from_email.'>'; 
-//   $to = $receiving_email_address;
-//   $from_name = $_POST['name'];
-//   $from_email = $_POST['email'];
-//   $subject = $_POST['subject'];
-//   $message= $_POST['message'];
-//   if(mail($to, $subject, $message)){ 
-//     echo 'Email has sent successfully.'; 
-//  }else{ 
-//     echo 'Email sending failed.'; 
-//  }
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
 
   // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
   /*
@@ -55,9 +33,9 @@ $result = $mgClient->messages()->send($domain, $params);
   );
   */
 
-  // $add_message( $_POST['name'], 'From');
-  // $add_message( $_POST['email'], 'Email');
-  // $add_message( $_POST['message'], 'Message', 10);
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
 
-  // echo $send();
+  echo $contact->send();
 ?>
