@@ -808,7 +808,7 @@ section {
 # More
 --------------------------------------------------------------*/
 
-.ftco-section {
+/*.ftco-section {
   padding: 7em 0;
   position: relative; }
   @media (max-width: 767.98px) {
@@ -846,9 +846,9 @@ section {
     position: relative;
     z-index: 0; }
 
-  /*@media (max-width: 767.98px) {
+  @media (max-width: 767.98px) {
     .ftco-counter .counter-wrap {
-      margin-bottom: 20px; } }*/
+      margin-bottom: 20px; } }
   
   .ftco-counter .ftco-number {
     display: block;
